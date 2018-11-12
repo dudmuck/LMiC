@@ -1,0 +1,2 @@
+
+target_nordic/target_nrf5X/target_nrf52/target_mcu_nrf52832/device

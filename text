@@ -1,0 +1,51 @@
+
+good 1v0:
+
+============== DEBUG STARTED ==============
+nvm unitID match
+txCnt0 load input 01000000 0000feca 00020700 00000001
+pdu: 40 fe ca 00 02 80 07 00 01 f4 
+b0: 49 00 00 00 00 00 fe ca 00 02 07 00 00 00 00 0a 
+LMIC.FNwkSIntKey: 2b 7e 15 16 28 ae d2 a6 ab f7 15 88 09 cf 4f 3c 
+load input 49000000 0000feca 00020700 0000000a
+mic:82990f5a
+EV_TXSTART
+40 fe ca 00 02 80 07 00 01 f4 82 99 0f 5a 
+ 1processDnData 17 decodeFrame FCntDown3 seqno4->4 load input 49000000 0001feca 00020400d
+seqno>=FcntDown  ok
+TXCOMPLETE
+datalen:0 1 Unconf txCnt0 load input 01000000 0000feca 00020800 00000001
+pdu: 40 fe ca 00 02 c2 08 00 03 07 01 47 
+b0: 49 00 00 00 00 00 fe ca 00 02 08 00 00 00 00 0c 
+LMIC.FNwkSIntKey: 2b 7e 15 16 28 ae d2 a6 ab f7 15 88 09 cf 4f 3c 
+load input 49000000 0000feca 00020800 0000000c
+mic:74a2774a
+EV_TXSTART
+40 fe ca 00 02 c2 08 00 03 07 01 47 74 a2 77 4a 
+ ->norx
+===================================================
+<info> app: Debug logging for UART over RTT started.
+<info> app: SoftDevice is present.
+<info> app: Initializing nrf_fstorage_sd implementation...
+<info> app: --> Event received: erased 1 page from address 0x7F000.
+<error> nrf_fstorage: len check failed in nrf_fstorage_write() with value 0x9.
+<error> app: ERROR 9 [NRF_ERROR_INVALID_LENGTH] at /home/wroberts/src/mcci-catena/ibm-lmic/target_nordic/target_nrf5x/nvm.c:190
+PC at: 0x000306EF
+<error> app: End of error report
+
+===================================================
+C++ Build -> Environment: STM32CUBE_DRIVERS: /home/wroberts/STM32Cube_FW_L0_V1.10.0/Drivers
+
+"${ProjDirPath}/../../target_stm/target_stm32l0/target_nucleo_l073rz/device"
+"${ProjDirPath}/../../lmic"
+"${STM32CUBE_DRIVERS}/STM32L0xx_HAL_Driver/Inc"
+"${STM32CUBE_DRIVERS}/CMSIS/Include"
+"${STM32CUBE_DRIVERS}CMSIS/Device/ST/STM32L0xx/Include"
+"${ProjDirPath}/../../hal"
+"${ProjDirPath}/../.."
+"${ProjDirPath}/../../target_stm/target_stm32l0"
+"${ProjDirPath}/../../target_stm/target_stm32l0/target_nucleo_l073rz"
+"${ProjDirPath}/../../target_stm"
+
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -mfloat-abi=soft -DSTM32 -DSTM32L0 -DSTM32L072CZTx -DDEBUG -I"/home/wroberts/src/mcci-catena/ibm-lmic/ac6_workspace/lmic_B-L072Z-LRWAN1/../../target_stm/target_stm32l0/target_nucleo_disco_l072z/device" -I"/home/wroberts/src/mcci-catena/ibm-lmic/ac6_workspace/lmic_B-L072Z-LRWAN1/../../lmic" -I"/home/wroberts/STM32Cube_FW_L0_V1.10.0/Drivers/STM32L0xx_HAL_Driver/Inc" -I"/home/wroberts/STM32Cube_FW_L0_V1.10.0/Drivers/CMSIS/Include" -I"/home/wroberts/STM32Cube_FW_L0_V1.10.0/DriversCMSIS/Device/ST/STM32L0xx/Include" -I"/home/wroberts/src/mcci-catena/ibm-lmic/ac6_workspace/lmic_B-L072Z-LRWAN1/../../hal" -I"/home/wroberts/src/mcci-catena/ibm-lmic/ac6_workspace/lmic_B-L072Z-LRWAN1/../.." -I"/home/wroberts/src/mcci-catena/ibm-lmic/ac6_workspace/lmic_B-L072Z-LRWAN1/../../target_stm/target_stm32l0" -I"/home/wroberts/src/mcci-catena/ibm-lmic/ac6_workspace/lmic_B-L072Z-LRWAN1/../../target_stm/target_stm32l0/target_nucleo_disco_l072z" -I"/home/wroberts/src/mcci-catena/ibm-lmic/ac6_workspace/lmic_B-L072Z-LRWAN1/../../target_stm"  -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/app/transmit_main.d" -MT"src/app/transmit_main.o" -o "src/app/transmit_main.o" "/home/wroberts/src/mcci-catena/ibm-lmic/examples/transmit/transmit_main.c"
+
